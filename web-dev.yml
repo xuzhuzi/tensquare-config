@@ -1,0 +1,21 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: coco-web
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+zuul:
+  routes:
+    coco-user:
+      path: /user/** #配置请求url的请求规则：此处的/user 是在coco-user微服务的请求路径前再增加的一个路径，只对本coco_web微服务有用，如果原有的coco_user 微服务的
+      #访问路径是 /user/getuser/1, 那此时我们访问微服务网关的访问路径就是 /user/user/getuser/1
+      serviceId: coco-user #指定此规则对应下的微服务
+    coco-order:
+      path: /order/**
+      serviceId: coco-order
+

@@ -1,5 +1,5 @@
 server:
-  port: 9022
+  port: 9002
 spring:
   application:
     name: coco-user #指定服务名

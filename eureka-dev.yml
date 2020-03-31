@@ -1,5 +1,5 @@
 server:
-  port: 6868 #服务端口
+  port: 6869 #服务端口
 spring:
   application:
     name: coco-eureka #当前应用的名称，在此微服务中，这个name我们可以不用指定

@@ -5,11 +5,17 @@ spring:
     name: coco-user #指定服务名
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.1.6:3306/springboot
+    url: jdbc:mysql://127.0.0.1:3306/springboot?characterEncoding=utf8
     username: root
     password: 123456
   rabbitmq:
     host: 192.168.8.117
+  jpa:
+    database: MySQL
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
 eureka:
   client:
     service-url:
